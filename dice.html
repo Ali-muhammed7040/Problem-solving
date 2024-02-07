@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Roll</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #dice {
+    font-size: 36px;
+    margin-top: 50px;
+  }
+  #rollButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div id="dice">Click "Roll Dice" to roll</div>
+<button id="rollButton">Roll Dice</button>
+
+<script>
+  document.getElementById('rollButton').addEventListener('click', rollDice);
+
+  function rollDice() {
+    var dice = document.getElementById('dice');
+    var randomNumber = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+    dice.textContent = 'You rolled: ' + randomNumber;
+  }
+</script>
+</body>
+</html>
